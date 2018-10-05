@@ -1,0 +1,14 @@
+WHO PAID MULTIPLE TIMES: select customer_no, count(*) from mobile_bill group by customer_no having count(*)>1;
+
+MAXIMUM NUMBER OF CALLS :select  customer_no, customer_name from mobile_customer where noofcalls= (select max(noofcalls) from mobile_customer);
+
+PAYMENT DATE SECOND HALF OF MONTH:  select * from mobile_bill where to_char(billpaiddate,'dd')>15;
+
+select * from customer where customer_no In(select customer_no from mobile_bill where to_char(billpaiddate,'mm')>6);
+
+select * from customer where customer_no In(select customer_no from mobile_bill where to_char(billpaiddate,'YYYY')>2017); 
+
+ADD COLUMNS: 
+
+
+
